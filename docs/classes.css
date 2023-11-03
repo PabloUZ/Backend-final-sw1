@@ -1,0 +1,146 @@
+.w-70{
+	width: 70%;
+}
+
+.p-50-0{
+	padding: 50px 0;
+}
+
+.center{
+	margin: 0 auto;
+}
+
+.list{
+	width: 100%;
+	padding: 5px;
+	box-shadow: 0 0 3px 3px #ccc;
+	border-radius: 10px;
+	.list-element{
+		display: block;
+		width: 100%;
+		padding: 10px 20px;
+		border-radius: 10px;
+		text-decoration: none;
+		color: #000;
+		&:hover{
+			width: 100%;
+			color: #006cc5;
+			background-color: #efefef;
+		}
+	}
+}
+
+.attributes{
+	width: 100%;
+	border-spacing: 0px;
+}
+.table-header{
+	width: 100%;
+}
+.table-header td {
+	width: 25%;
+	border-bottom: 1px solid #ccc;
+}
+.table-header td h3{
+	width: 100%;
+	display: flex;
+	align-items: center;
+}
+.table-content.first td {
+	border-top: 20px solid transparent;
+}
+.table-content td {
+	padding: 10px;
+}
+.table-content td span {
+	width: 100%;
+	display: flex;
+	align-items: center;
+}
+.table-content td a {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	color: #006cc5;
+	&:hover{
+		color: #0ac500;
+	}
+}
+
+.routes{
+	width: 100%;
+}
+.routes .endpoint{
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 4fr 4fr  1fr;
+	gap: 10px;
+}
+.endpoint button{
+	position: relative;
+	border: none;
+	background-color: transparent;
+}
+.endpoint button .tag {
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.3s ease;
+	position: absolute;
+	background-color: #000;
+	color: white;
+	padding: 3px 5px;
+	border-radius: 5px;
+	left: 50%;
+	top: 50%;
+	transform: translateX(-50%) translateY(70%);
+	width: fit-content;
+	height: fit-content;
+}
+span.tag:hover{
+	color: white;
+}
+.endpoint button .tag::before {
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-bottom: 8px solid #000;
+	top: -30%;
+	/* Ajusta la posición vertical de la flecha */
+	left: 50%;
+	transform: translateX(-50%);
+}
+.endpoint button svg{
+	fill: #999;
+}
+.endpoint button:hover svg{
+	fill:#006cc5;
+}
+.endpoint span.ep{
+	color: #006cc5;
+}
+.verb{
+	padding: 5px 10px;
+}
+.verb.get{
+	background-color: #a8fea3;
+	color: #066f00;
+}
+
+.verb.post{
+	background-color: #f0fea3;
+	color: #af7b00;
+}
+
+.verb.patch {
+	background-color: #dba3fe;
+	color: #4e006f;
+}
+
+.verb.delete {
+	background-color: #feaca3;
+	color: #6f0000;
+}

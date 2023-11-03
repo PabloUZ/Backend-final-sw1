@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../../styles.css">
+	<link rel="stylesheet" href="../../classes.css">
+	<title>API REST</title>
+</head>
+
+<body>
+	<div id="container">
+		<div class="w-70 center p-50-0">
+			<div id="title">
+				<h1>Ally</h1>
+				<div>
+					<a href="/docs">docs</a>
+					<span>&nbsp;>&nbsp;</span>
+					<a href="/docs/allies">Ally</a>
+				</div>
+			</div>
+			<hr><br><br><br><br>
+			<h2>ATTRIBUTES</h2>
+			<br><br>
+			<table class="attributes">
+				<tr class="table-header">
+					<td>
+						<h3>ATTRIBUTE</h3>
+					</td>
+					<td>
+						<h3>TYPE</h3>
+					</td>
+					<td>
+						<h3>REQUIRED</h3>
+					</td>
+					<td>
+						<h3>UNIQUE</h3>
+					</td>
+					<td>
+						<h3>DEFAULT</h3>
+					</td>
+				</tr>
+				<tr class="table-content first">
+					<td>
+						<span>name</span>
+					</td>
+					<td>
+						<span>String</span>
+					</td>
+					<td>
+						<span>true</span>
+					</td>
+					<td>
+						<span>false</span>
+					</td>
+					<td>
+						<span>-</span>
+					</td>
+				</tr>
+				<tr class="table-content">
+					<td>
+						<span>avatar</span>
+					</td>
+					<td>
+						<span>String</span>
+					</td>
+					<td>
+						<span>false</span>
+					</td>
+					<td>
+						<span>false</span>
+					</td>
+					<td>
+						<span>"uploads/avatar/default.png"</span>
+					</td>
+				</tr>
+				<tr class="table-content">
+					<td>
+						<span>address</span>
+					</td>
+					<td>
+						<a href="/docs/addresses">Address</a>
+					</td>
+					<td>
+						<span>false</span>
+					</td>
+					<td>
+						<span>false</span>
+					</td>
+					<td>
+						<span>undefined</span>
+					</td>
+				</tr>
+			</table>
+			<br><br><br><br>
+
+			<h2>ENDPOINTS</h2>
+			<br><br>
+
+			<div class="routes">
+				<div class="endpoint header">
+					<h3>TYPE</h3>
+					<h3>ENDPOINT</h3>
+					<h3>DESCRIPTION</h3>
+					<h3>COPY</h3>
+				</div>
+				<br><br>
+				<div class="endpoint">
+					<span class="verb get">GET</span>
+					<span class="ep">/api/v1/allies</span>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam blanditiis illo delectus enim omnis tempore id
+						optio sed repudiandae quaerat. Odit maiores nobis ex libero perferendis recusandae aperiam, voluptatibus architecto.
+					</p>
+					<button id="get-1" onclick="copy('#get-1','/api/v1/allies')">
+						<svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true"
+							class="octicon octicon-copy js-clipboard-copy-icon d-inline-block">
+							<path
+								d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z">
+							</path>
+							<path
+								d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z">
+							</path>
+						</svg>
+						<span class="tag">copied</span>
+					</button>
+				</div>
+				<br>
+				<div class="endpoint">
+					<span class="verb get">GET</span>
+					<span class="ep">/api/v1/allies/:id</span>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam blanditiis illo delectus enim omnis tempore
+						id
+						optio sed repudiandae quaerat. Odit maiores nobis ex libero perferendis recusandae aperiam, voluptatibus
+						architecto.
+					</p>
+					<button id="get-2" onclick="copy('#get-2','/api/v1/allies/:id')">
+						<svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true"
+							class="octicon octicon-copy js-clipboard-copy-icon d-inline-block">
+							<path
+								d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z">
+							</path>
+							<path
+								d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z">
+							</path>
+						</svg>
+						<span class="tag">copied</span>
+					</button>
+				</div>
+				<br>
+				<div class="endpoint">
+					<span class="verb post">POST</span>
+					<span class="ep">/api/v1/allies/new</span>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam blanditiis illo delectus enim omnis tempore id
+						optio sed repudiandae quaerat. Odit maiores nobis ex libero perferendis recusandae aperiam, voluptatibus architecto.
+					</p>
+					<button id="post-1" onclick="copy('#post-1','/api/v1/allies/new')">
+						<svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true"
+							class="octicon octicon-copy js-clipboard-copy-icon d-inline-block">
+							<path
+								d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z">
+							</path>
+							<path
+								d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z">
+							</path>
+						</svg>
+						<span class="tag">copied</span>
+					</button>
+				</div>
+				<br>
+				<div class="endpoint">
+					<span class="verb patch">PATCH</span>
+					<span class="ep">/api/v1/allies/:id</span>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam blanditiis illo delectus enim omnis tempore id optio sed repudiandae quaerat. Odit maiores nobis ex libero perferendis recusandae aperiam, voluptatibus architecto.</p>
+					<button id="patch-1" onclick="copy('#patch-1','/api/v1/allies/:id')">
+						<svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true"
+						class="octicon octicon-copy js-clipboard-copy-icon d-inline-block">
+							<path
+								d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z">
+							</path>
+							<path
+								d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z">
+							</path>
+						</svg>
+						<span class="tag">copied</span>
+					</button>
+				</div>
+				<br>
+				<div class="endpoint">
+					<span class="verb delete">DELETE</span>
+					<span class="ep">/api/v1/allies/:id</span>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam blanditiis illo delectus enim omnis tempore id
+						optio sed repudiandae quaerat. Odit maiores nobis ex libero perferendis recusandae aperiam, voluptatibus architecto.
+					</p>
+					<button id="delete-1" onclick="copy('#delete-1','/api/v1/allies/:id')">
+						<svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true"
+							class="octicon octicon-copy js-clipboard-copy-icon d-inline-block">
+							<path
+								d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z">
+							</path>
+							<path
+								d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z">
+							</path>
+						</svg>
+						<span class="tag">copied</span>
+					</button>
+				</div>
+			</div>
+
+		</div>
+		<footer id="footer">
+			<span>Pablo Uribe Zuluaga</span>
+			<div>
+				<a href="https://github.com/PabloUZ/" target="_blank">GITHUB</a>
+				<a href="https://www.youtube.com/@pablouribezuluaga" target="_blank">YOUTUBE</a>
+				<a href="https://www.linkedin.com/in/pablo-uribe-zuluaga-9893b7240/" target="_blank">LINKEDIN</a>
+			</div>
+		</footer>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.4.0/clipboard.min.js"
+		integrity="sha512-iJh0F10blr9SC3d0Ow1ZKHi9kt12NYa+ISlmCdlCdNZzFwjH1JppRTeAnypvUez01HroZhAmP4ro4AvZ/rG0UQ=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script>
+		function copy(id,route) {
+			const clipboard = new Clipboard(id, {
+				text: () => {return route}
+			});
+
+			// Maneja eventos de éxito y error
+			clipboard.on("success", function (e) {
+				show(id);
+				clipboard.destroy();
+			});
+			clipboard.on("error", function (e) {
+				alert("Error al intentar copiar");
+			});
+		}
+		function show(id){
+			const elem = document.querySelector(id).getElementsByClassName("tag")[0];
+			if(elem){
+				elem.style.opacity = "1";
+				elem.style.visibility = "visible";
+				setTimeout(() => {
+					elem.style.opacity = "0";
+					setTimeout(() => {
+						elem.style.visibility = "hidden";
+					},400)
+				}, 3000);
+			}
+		}
+	</script>
+</body>
+
+</html>
