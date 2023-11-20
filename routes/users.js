@@ -29,7 +29,7 @@ import { CREATE, DELETE, READ_ALL, READ_BY_MAIL, UPDATE } from "../controllers/u
 import auth from "../middlewares/auth.js";
 import self from "../middlewares/self.js";
 
-router.post("/new", [auth, uploads.single("avatar")], CREATE);
+router.post("/new", [uploads.single("avatar")], CREATE);
 router.get("/", READ_ALL);
 router.get("/:mail", [auth, self], READ_BY_MAIL);
 router.patch("/:mail", [auth, uploads.single("avatar")], UPDATE);

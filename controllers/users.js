@@ -261,7 +261,7 @@ const LOGIN = async (req, res) => {
 		if (!user) throw new Error();
 		if(user.password === password){
 			const token = generateToken(user);
-			return res.status(200).send(token);
+			return res.status(200).json({access: token});
 		}
 		else throw new Error()
 
