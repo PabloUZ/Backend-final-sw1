@@ -16,6 +16,7 @@ import providerRoutes from "./routes/providers.js";
 import categoryRoutes from "./routes/categories.js";
 import sedeRoutes from "./routes/sedes.js";
 import serviceRoutes from "./routes/services.js";
+import authRoutes from "./routes/auth.js";
 
 const __dir = path.dirname(fileURLToPath(import.meta.url));
 
@@ -46,6 +47,7 @@ const start = async () => {
 		app.use("/api/v1/categories", categoryRoutes);
 		app.use("/api/v1/sedes", sedeRoutes);
 		app.use("/api/v1/services", serviceRoutes);
+		app.use("/api/v1/auth", authRoutes);
 
 		app.use((req, res, next) => {
 			const error = new Error("Not implemented");

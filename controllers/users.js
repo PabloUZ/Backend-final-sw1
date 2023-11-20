@@ -4,6 +4,7 @@ import { promises as fs } from "fs"
 import User from "../models/User.js";
 import Role from "../models/Role.js";
 import Address from "../models/Address.js";
+import { generateToken } from "../services/jwt.js";
 
 const validate = (params, action) => {
 	if (
@@ -45,7 +46,7 @@ const CREATE = async (req, res) => {
 		const file = req.file;
 		params.avatar = file.path;
 	}
-	if (!req.file && updateParams.avatar !== undefined && updateParams.avatar === ""){
+	if (!req.file && params.avatar !== undefined && updateParams.avatar === ""){
 		return res.status(400).json({
 			status: 400,
 			type: "error",
@@ -238,4 +239,41 @@ const DELETE = async (req, res) => {
 	}
 }
 
-export { CREATE, READ_ALL, READ_BY_MAIL, UPDATE, DELETE };
+
+const LOGIN = async (req, res) => {
+	const { email, password } = req.body
+	if (!email || !password) {
+		return res.status(400).json({
+			status: 400,
+			type: "error",
+			message: "Missing or incorrect data",
+		});
+	}
+	if (!validator.isEmail(email)) {
+		return res.status(400).json({
+			status: 400,
+			type: "error",
+			message: "Invalid email",
+		});
+	}
+	try {
+		const user = await User.findOne({ email: email });
+		if (!user) throw new Error();
+		if(user.password === password){
+			const token = generateToken(user);
+			return res.status(200).send(token);
+		}
+		else throw new Error()
+
+	} catch (e) {
+		return res.status(400).json({
+			status: 400,
+			type: "error",
+			message: "Can not get user",
+			details: e.message
+		});
+	}
+}
+
+
+export { CREATE, READ_ALL, READ_BY_MAIL, UPDATE, DELETE, LOGIN };

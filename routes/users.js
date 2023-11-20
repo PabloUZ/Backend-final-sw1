@@ -26,13 +26,14 @@ const fileFilter = (req, file, cb) => {
 const uploads = multer({storage: storage, fileFilter: fileFilter});
 
 import { CREATE, DELETE, READ_ALL, READ_BY_MAIL, UPDATE } from "../controllers/users.js";
+import auth from "../middlewares/auth.js";
+import self from "../middlewares/self.js";
 
-
-router.post("/new", [uploads.single("avatar")], CREATE);
+router.post("/new", [auth, uploads.single("avatar")], CREATE);
 router.get("/", READ_ALL);
-router.get("/:mail", READ_BY_MAIL);
-router.patch("/:mail", [uploads.single("avatar")], UPDATE);
-router.delete("/:mail", DELETE);
+router.get("/:mail", [auth, self], READ_BY_MAIL);
+router.patch("/:mail", [auth, uploads.single("avatar")], UPDATE);
+router.delete("/:mail", [auth], DELETE);
 
 
 
